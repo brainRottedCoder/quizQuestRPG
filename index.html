@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QuizQuest RPG</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="hd">
+      <h1>⚔️ QuizQuest RPG ⚔️</h1>
+      <p class="tag">Battle monsters by learning. AI-powered with Gemini 2.5-flash</p>
+    </header>
+
+    <section id="scrMenu" class="bx">
+      <div class="row">
+        <input id="inpKey" type="password" placeholder="Google Gemini API Key (required for AI mode)" />
+        <button id="btnClr" class="sm">Clear</button>
+      </div>
+      <div class="row">
+        <label class="ck"><input id="chkDemo" type="checkbox" /> Demo mode (local questions, no AI)</label>
+      </div>
+      <h3>🏰 Choose Your Dungeon</h3>
+      <div class="grid">
+        <button class="dng" data-sub="Mat"><span class="ico">📐</span><span>Math</span></button>
+        <button class="dng" data-sub="Sci"><span class="ico">🔬</span><span>Science</span></button>
+        <button class="dng" data-sub="His"><span class="ico">📜</span><span>History</span></button>
+        <button class="dng" data-sub="Geo"><span class="ico">🌍</span><span>Geography</span></button>
+      </div>
+      <div class="row">
+        <button id="btnStart" class="pri">⚔️ Enter Dungeon</button>
+      </div>
+      <p class="hlp">Get your free Gemini API key at <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com</a></p>
+    </section>
+
+    <section id="scrLoad" class="bx hid">
+      <div class="ldwrp">
+        <div class="spn"></div>
+        <p class="ldtxt">Summoning dungeon narrative...</p>
+        <div class="ldbar"><div id="ldprog" class="ldprog"></div></div>
+      </div>
+    </section>
+
+    <section id="scrBat" class="hid">
+      <div class="top">
+        <div class="card plr" id="plrBox">
+          <div class="cico">🛡️</div>
+          <div class="nm"><span id="plrNm">Hero</span> <span id="plrLv" class="lv">Lv 1</span></div>
+          <div class="bar"><div id="plrHp" class="hp"></div></div>
+          <div class="st">HP <span id="plrHpT">100/100</span> · ATK <span id="plrAtk">10</span> · DEF <span id="plrDef">2</span> · STK <span id="plrStr">0</span> · XP <span id="plrXp">0</span> · 💰 <span id="plrGld">0</span></div>
+        </div>
+        <div class="vs">VS</div>
+        <div class="card bad" id="monBox">
+          <div class="cico" id="monIco">👹</div>
+          <div class="nm"><span id="monNm">Goblin</span> <span id="monLv" class="lv">Lv 1</span></div>
+          <div class="bar"><div id="monHp" class="hp red"></div></div>
+          <div class="st">HP <span id="monHpT">30/30</span> · ATK <span id="monAtk">8</span> · DEF <span id="monDef">1</span></div>
+        </div>
+      </div>
+      <div id="nar" class="nar"></div>
+      <div id="qbx" class="q">
+        <div id="qp" class="qp">...</div>
+        <div id="opt" class="opt"></div>
+      </div>
+      <div class="ctl">
+        <button id="btnNxt" class="pri" disabled>Next</button>
+      </div>
+      <div id="log" class="log"></div>
+      <div id="ach" class="ach"></div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+
+</body>
+</html>
